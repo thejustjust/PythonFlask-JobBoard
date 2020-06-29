@@ -1,16 +1,16 @@
 import sqlite3
 from flask import g, Flask, render_template
 
-app = Flask(__name__)
-
 PATH = 'db/jobs.sqlite'
 
-def get_db():
-    db = getattr(g, '_database', None)
-    if db is None:
-        db = g._database = sqlite3.connect(DATABASE)
-    db.row_factory = sqlite3.Row
-    return db
+app = Flask(__name__)
+
+def open_connection():
+    connection = getattr(g, '_connection', None)
+    if connection == None:
+        connection = g._connection = sqlite3.connect(PATH)
+    connection.row_factory = sqlite3.Row
+    return connection
 
 @app.route("/")
 @app.route("/jobs")
