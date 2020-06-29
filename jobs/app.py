@@ -5,5 +5,5 @@ app = Flask(__name__)
 
 jobs = render_template('index.html')
 
-@jobs.route('/')
-@jobs.route('/jobs')
+@app.route('/')
+@app.route('/jobs')
