@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Job Board</title>
+    <LINK href={{url_for('static',filename='css/bulma.min.css')}}  rel="stylesheet" type="text/css">
+      <LINK href={{url_for('static',filename='css/app.css')}}  rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <div class="container top">
+      <div class="content">
+        {% block content %}
+        {% endblock %}
+      </div>
+    </div>
+  </body>
+</html>
